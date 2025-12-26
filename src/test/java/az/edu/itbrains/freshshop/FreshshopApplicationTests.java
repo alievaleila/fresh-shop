@@ -1,0 +1,13 @@
+package az.edu.itbrains.freshshop;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class FreshshopApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

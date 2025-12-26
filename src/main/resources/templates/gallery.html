@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{layout}">
+<head>
+    <title>Home</title>
+</head>
+
+<body>
+<div layout:fragment="content">
+    <!-- End Main Top -->
+
+    <!-- Start Top Search -->
+    <div class="top-search">
+        <div class="container">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Top Search -->
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Services</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Gallery  -->
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Our Gallery</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">All</button>
+                            <button th:each="cat : ${categories}"
+                                    th:text="${cat.name}"
+                                    th:attr="data-filter='.' + ${cat.name.replace(' ', '-').toLowerCase()}"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Product List -->
+            <div class="row special-list">
+                <div class="col-lg-3 col-md-6 special-grid"
+                     th:each="product : ${products}"
+                     th:classappend="${product.category.name.replace(' ', '-').toLowerCase()}">
+                    <div class="products-single fix">
+                        <div class="box-img-hover">
+                            <div class="type-lb" th:if="${product.sale}">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img th:src="@{${product.imageUrl}}" class="img-fluid" alt="Image">
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Gallery  -->
+</div>
+</body>
+</html>
