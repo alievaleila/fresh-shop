@@ -3,9 +3,11 @@ package az.edu.itbrains.freshshop.controller;
 import az.edu.itbrains.freshshop.dto.CategoryDto;
 import az.edu.itbrains.freshshop.dto.ProductDto;
 import az.edu.itbrains.freshshop.dto.SideBarDto;
+import az.edu.itbrains.freshshop.dto.StartDto;
 import az.edu.itbrains.freshshop.service.CategoryService;
 import az.edu.itbrains.freshshop.service.ProductService;
 import az.edu.itbrains.freshshop.service.SideBarService;
+import az.edu.itbrains.freshshop.service.StartService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,14 +18,20 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
+
     private final CategoryService categoryService;
     private final ProductService productService;
     private final SideBarService sideBarService;
+    private final StartService startService;
 
     @GetMapping("/")
     public String index(Model model) {
-        List<SideBarDto>sideBarDtoList=sideBarService.getAllSideBars();
-        model.addAttribute("sideBars",sideBarDtoList);
+        List<SideBarDto> sideBarDtoList = sideBarService.getAllSideBars();
+        model.addAttribute("sideBars", sideBarDtoList);
+        List<StartDto> startDtoList = startService.getAllStarts();
+        model.addAttribute("starts", startDtoList);
+        List<ProductDto> productDtoList = productService.getAllLatest();
+        model.addAttribute("latest", productDtoList);
         return "index.html";
     }
 
@@ -44,10 +52,10 @@ public class HomeController {
 
     @GetMapping("/gallery")
     public String gallery(Model model) {
-        List<CategoryDto>categoryDtoList=categoryService.getAllCategories();
-        model.addAttribute("categories",categoryDtoList);
-        List<ProductDto>productDtoList=productService.getAllProducts();
-        model.addAttribute("products",productDtoList);
+        List<CategoryDto> categoryDtoList = categoryService.getAllCategories();
+        model.addAttribute("categories", categoryDtoList);
+        List<ProductDto> productDtoList = productService.getAllProducts();
+        model.addAttribute("products", productDtoList);
         return "gallery.html";
     }
 

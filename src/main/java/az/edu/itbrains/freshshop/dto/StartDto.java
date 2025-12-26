@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 public class StartDto {
     private Long id;
     private String name;
-    private String imageUrL;
+    private String imageUrl;
 }

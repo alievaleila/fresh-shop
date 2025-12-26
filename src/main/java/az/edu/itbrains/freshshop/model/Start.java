@@ -19,5 +19,5 @@ public class Start {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String imageUrL;
+    private String imageUrl;
 }
