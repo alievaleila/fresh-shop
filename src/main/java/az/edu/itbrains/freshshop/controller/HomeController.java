@@ -2,8 +2,10 @@ package az.edu.itbrains.freshshop.controller;
 
 import az.edu.itbrains.freshshop.dto.CategoryDto;
 import az.edu.itbrains.freshshop.dto.ProductDto;
+import az.edu.itbrains.freshshop.dto.SideBarDto;
 import az.edu.itbrains.freshshop.service.CategoryService;
 import az.edu.itbrains.freshshop.service.ProductService;
+import az.edu.itbrains.freshshop.service.SideBarService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,9 +18,12 @@ import java.util.List;
 public class HomeController {
     private final CategoryService categoryService;
     private final ProductService productService;
+    private final SideBarService sideBarService;
 
     @GetMapping("/")
-    public String index() {
+    public String index(Model model) {
+        List<SideBarDto>sideBarDtoList=sideBarService.getAllSideBars();
+        model.addAttribute("sideBars",sideBarDtoList);
         return "index.html";
     }
 
