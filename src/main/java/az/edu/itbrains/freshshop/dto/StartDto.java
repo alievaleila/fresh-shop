@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class StartDto {
+
     private Long id;
     private String name;
     private String imageUrl;

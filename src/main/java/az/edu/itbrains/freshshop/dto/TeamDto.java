@@ -1,4 +1,5 @@
-package az.edu.itbrains.freshshop.model;
+package az.edu.itbrains.freshshop.dto;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,15 +13,11 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "sidebar")
-public class SideBar {
+public class TeamDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
+    private String name;
     private String description;
+    private String job;
     private String imageUrl;
-
 }

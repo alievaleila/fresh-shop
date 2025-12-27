@@ -4,10 +4,12 @@ import az.edu.itbrains.freshshop.dto.CategoryDto;
 import az.edu.itbrains.freshshop.dto.ProductDto;
 import az.edu.itbrains.freshshop.dto.SideBarDto;
 import az.edu.itbrains.freshshop.dto.StartDto;
+import az.edu.itbrains.freshshop.dto.TeamDto;
 import az.edu.itbrains.freshshop.service.CategoryService;
 import az.edu.itbrains.freshshop.service.ProductService;
 import az.edu.itbrains.freshshop.service.SideBarService;
 import az.edu.itbrains.freshshop.service.StartService;
+import az.edu.itbrains.freshshop.service.TeamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +25,7 @@ public class HomeController {
     private final ProductService productService;
     private final SideBarService sideBarService;
     private final StartService startService;
+    private final TeamService teamService;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -36,7 +39,9 @@ public class HomeController {
     }
 
     @GetMapping("/about")
-    public String about() {
+    public String about(Model model) {
+        List<TeamDto>teamDtoList=teamService.getAllTeams();
+        model.addAttribute("teams",teamDtoList);
         return "about.html";
     }
 

@@ -19,9 +19,9 @@ public class SideBarServiceImpl implements SideBarService {
 
     @Override
     public List<SideBarDto> getAllSideBars() {
-        List<SideBarDto>sideBarDtoList=sideBarRepository.findAll()
+        List<SideBarDto> sideBarDtoList = sideBarRepository.findAll()
                 .stream()
-                .map(sideBar -> modelMapper.map(sideBar,SideBarDto.class)).collect(Collectors.toList());
+                .map(sideBar -> modelMapper.map(sideBar, SideBarDto.class)).collect(Collectors.toList());
         return sideBarDtoList;
     }
 }
