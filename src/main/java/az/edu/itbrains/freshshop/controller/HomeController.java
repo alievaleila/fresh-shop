@@ -6,6 +6,7 @@ import az.edu.itbrains.freshshop.dto.SideBarDto;
 import az.edu.itbrains.freshshop.dto.StartDto;
 import az.edu.itbrains.freshshop.dto.TeamDto;
 import az.edu.itbrains.freshshop.service.CategoryService;
+import az.edu.itbrains.freshshop.service.ContactService;
 import az.edu.itbrains.freshshop.service.ProductService;
 import az.edu.itbrains.freshshop.service.SideBarService;
 import az.edu.itbrains.freshshop.service.StartService;
@@ -26,6 +27,7 @@ public class HomeController {
     private final SideBarService sideBarService;
     private final StartService startService;
     private final TeamService teamService;
+    private final ContactService contactService;
 
     @GetMapping("/")
     public String index(Model model) {
@@ -40,8 +42,8 @@ public class HomeController {
 
     @GetMapping("/about")
     public String about(Model model) {
-        List<TeamDto>teamDtoList=teamService.getAllTeams();
-        model.addAttribute("teams",teamDtoList);
+        List<TeamDto> teamDtoList = teamService.getAllTeams();
+        model.addAttribute("teams", teamDtoList);
         return "about.html";
     }
 
