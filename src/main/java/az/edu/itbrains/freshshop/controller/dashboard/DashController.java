@@ -1,4 +1,6 @@
 package az.edu.itbrains.freshshop.controller.dashboard;
 
-public class DashController {
+import java.io.Serializable;
+
+public class DashController{
 }
