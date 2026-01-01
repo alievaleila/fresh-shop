@@ -78,7 +78,7 @@
                                             <div class="products-single fix">
                                                 <div class="box-img-hover">
                                                     <div class="type-lb">
-                                                        <p th:text="${p.sale}" class="sale">Sale</p>
+                                                        <p th:if="${p.sale}" class="sale">Sale</p>
                                                     </div>
                                                     <img th:src="${p.imageUrl}" class="img-fluid" alt="Image">
                                                     <div class="mask-icon">
