@@ -25,21 +25,9 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(c -> c.disable())
-                .authorizeHttpRequests((c) -> c
-                        .anyRequest().permitAll()
-                )
-                .formLogin((form) -> form
-                        .loginPage("/login")
-                        .failureUrl("/login?error=true")
+        http.csrf(c -> c.disable()).authorizeHttpRequests((c) -> c.anyRequest().permitAll()).formLogin((form) -> form.loginPage("/login").failureUrl("/login?error=true")
 
-                )
-                .exceptionHandling(exception -> exception
-                        .accessDeniedHandler(((request, response, accessDeniedException) ->
-                                response.sendRedirect("/login")
-                        )))
-                .logout((log) -> log.logoutSuccessUrl("/login"));
+        ).exceptionHandling(exception -> exception.accessDeniedHandler(((request, response, accessDeniedException) -> response.sendRedirect("/login")))).logout((log) -> log.logoutSuccessUrl("/login"));
 
 
         return http.build();

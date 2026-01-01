@@ -17,7 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="categories")
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -26,6 +26,6 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category")
-    private List<Product> products=new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 
 }
