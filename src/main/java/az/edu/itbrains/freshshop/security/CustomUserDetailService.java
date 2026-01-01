@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Configuration
 public class CustomUserDetailService implements UserDetailsService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -30,12 +31,10 @@ public class CustomUserDetailService implements UserDetailsService {
                     true,
                     findUser.getRoles().stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList())
             );
-
             return user;
+
         } catch (Exception e) {
             throw new UsernameNotFoundException(e.getMessage());
-
         }
-
     }
 }
