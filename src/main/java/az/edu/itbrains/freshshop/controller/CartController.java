@@ -7,6 +7,7 @@ public class CartController {
 
     @PostMapping("/delete")
     public String delete(){
+        return "redirect:/delete";
 
     }
 }
