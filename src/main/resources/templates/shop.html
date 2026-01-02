@@ -92,12 +92,14 @@
                                                                    title="Add to Wishlist"><i class="far fa-heart"></i></a>
                                                             </li>
                                                         </ul>
-                                                        <a class="cart" href="#">Add to Cart</a>
+                                                        <form action="/cart/add" method="POST">
+                                                            <button type="submit" class="cart">Add to Cart</button>
+                                                        </form>
                                                     </div>
                                                 </div>
                                                 <div class="why-text">
-                                                    <h4 th:text="${p.name}" >Lorem ipsum dolor sit amet</h4>
-                                                    <h5 th:text="${p.price}" > $9.79</h5>
+                                                    <h4 th:text="${p.name}">Lorem ipsum dolor sit amet</h4>
+                                                    <h5 th:text="${p.price}"> $9.79</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -112,7 +114,8 @@
                                                         <div class="type-lb">
                                                             <p class="new">New</p>
                                                         </div>
-                                                        <img src="/front/images/img-pro-01.jpg" class="img-fluid" alt="Image">
+                                                        <img src="/front/images/img-pro-01.jpg" class="img-fluid"
+                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip"
@@ -161,7 +164,8 @@
                                                         <div class="type-lb">
                                                             <p class="sale">Sale</p>
                                                         </div>
-                                                        <img src="/front/images/img-pro-02.jpg" class="img-fluid" alt="Image">
+                                                        <img src="/front/images/img-pro-02.jpg" class="img-fluid"
+                                                             alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip"
@@ -210,7 +214,8 @@
                                                         <div class="type-lb">
                                                             <p class="sale">Sale</p>
                                                         </div>
-                                                        <img src="/statffic/front/images/img-pro-03.jpg" class="img-fluid" alt="Image">
+                                                        <img src="/statffic/front/images/img-pro-03.jpg"
+                                                             class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
                                                                 <li><a href="#" data-toggle="tooltip"

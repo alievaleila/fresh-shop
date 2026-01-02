@@ -1,7 +1,7 @@
 <!-- layout.html -->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 <head>
     <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">My Awesome App</title>
@@ -61,8 +61,9 @@
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="login-box">
-                    <a href="/register" id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-                       Register Here
+                    <a href="/register" id="basic" class="selectpicker show-tick form-control"
+                       data-placeholder="Sign In">
+                        Register Here
 
                     </a>
                 </div>
@@ -144,7 +145,7 @@
                 <ul>
                     <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                     <li class="side-menu">
-                        <a href="#">
+                        <a href="/cart">
                             <i class="fa fa-shopping-bag"></i>
                             <span class="badge">3</span>
                             <p>My Cart</p>
@@ -160,17 +161,20 @@
             <li class="cart-box">
                 <ul class="cart-list">
                     <li>
-                        <a href="#" class="photo"><img src="/front/images/img-pro-01.jpg" class="cart-thumb" alt=""/></a>
+                        <a href="#" class="photo"><img src="/front/images/img-pro-01.jpg" class="cart-thumb"
+                                                       alt=""/></a>
                         <h6><a href="#">Delica omtantur </a></h6>
                         <p>1x - <span class="price">$80.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="/front/images/img-pro-02.jpg" class="cart-thumb" alt=""/></a>
+                        <a href="#" class="photo"><img src="/front/images/img-pro-02.jpg" class="cart-thumb"
+                                                       alt=""/></a>
                         <h6><a href="#">Omnes ocurreret</a></h6>
                         <p>1x - <span class="price">$60.00</span></p>
                     </li>
                     <li>
-                        <a href="#" class="photo"><img src="/front/images/img-pro-03.jpg" class="cart-thumb" alt=""/></a>
+                        <a href="#" class="photo"><img src="/front/images/img-pro-03.jpg" class="cart-thumb"
+                                                       alt=""/></a>
                         <h6><a href="#">Agam facilisis</a></h6>
                         <p>1x - <span class="price">$40.00</span></p>
                     </li>
